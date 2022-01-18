@@ -16,6 +16,9 @@ def get_username():
     """ Asks the user for their name and stores it as a variable {name} """
     print("What is your name?")
     name = input()
+    if not name.isalpha():
+        print('Please enter only alphabetical characters')
+        get_username()
     return name
 print("Hello " + get_username() +"!")
 
@@ -25,7 +28,7 @@ def read_storyline():
     storyline = f.read()
     f.close()
     print(storyline)
-print(read_storyline())
+read_storyline()
 
 def start_game():
     """Temporary function for starting the game to test it is called correctly"""
@@ -37,6 +40,7 @@ def ask_to_begin():
     if begin == '1':
         start_game()
     elif begin == '2':
+        print('Okay, maybe next time! Goodbye')
         exit()
     else: 
         print('Invalid entry')
