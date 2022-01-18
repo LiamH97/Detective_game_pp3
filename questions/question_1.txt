@@ -1,1 +1,0 @@
-"Hello {0}, would we be able to come in to talk to you about Vinnie Walker?"
