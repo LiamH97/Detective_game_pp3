@@ -57,9 +57,9 @@ read_story_1()
 def read_question_1():
     """A function to read the first part of the story as the game has begun"""
     with open('questions/question_1.txt') as f:
-        story_1 = f.read()
+        question_1 = f.read()
         f.close()
-        print('Detective : '+ (story_1.format(NAME)))
+        print('Detective : '+ (question_1.format(NAME)))
 read_question_1()
 def ans_question_1():
     """asks the user to answer the first question raises suspiscion level if certain answers are chosen"""
@@ -77,6 +77,7 @@ def ans_question_1():
         if ans1 == '2':
             sus +=5
             print('You were arrested and brought in for further questioning')
+            #Add entry to sheet for arrested
             exit()
         elif ans1 =='1':
             pass
@@ -86,3 +87,35 @@ def ans_question_1():
 
 ans_question_1()
 print('sus = ' + str(sus)) # will be removed for final deployment, user should not see their suspiscion levels until the end
+
+def read_story_2():
+    """A function to read the first part of the story as the game has begun"""
+    with open('story/story_2.txt') as f:
+        story_2 = f.read()
+        f.close()
+        print(story_2.format(NAME))
+read_story_2()
+
+def read_question_2():
+    """A function to read the first part of the story as the game has begun"""
+    with open('questions/question_2.txt') as f:
+        question_2 = f.read()
+        f.close()
+        print('Detective : '+ (question_2.format(NAME)))
+read_question_2()
+def ans_question_2():
+    """asks the user to answer the second question raises suspiscion level if certain answers are chosen"""
+    global sus
+    print('How do you answer the detective\'s question? \n 1 = Yes, 2 = No')
+    ans = input()
+    if ans == '1':
+        pass
+    elif ans == '2':
+        sus +=1
+        print('Well it\'s a fact he was last reported to be seen wandering this street by multiple witnesses')
+    else:
+        print('invalid entry, please select option 1 or 2')
+        ans_question_2()
+
+ans_question_2()
+print('sus = ' + str(sus))

@@ -1,0 +1,2 @@
+The detective enters your home and sits down at the kitchen table.
+"Have a seat {0}, I have a few questions"
