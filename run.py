@@ -12,6 +12,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('detective_game')
 
-status = SHEET.worksheet('Status')
-data = status.get_all_values()
-print(data)
+def get_username():
+    print("What is your name?")
+    name = input()
+    return name
+print("Hello " + get_username() +"!")
