@@ -17,3 +17,10 @@ def get_username():
     name = input()
     return name
 print("Hello " + get_username() +"!")
+
+def read_storyline():
+    f = open('storyline.txt', 'r')
+    storyline = f.read()
+    f.close()
+    print(storyline)
+print (read_storyline())
