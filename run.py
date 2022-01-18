@@ -1,5 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import subprocess
+from game import game
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -24,21 +26,18 @@ print("Hello " + get_username() +"!")
 
 def read_storyline():
     """ A function to read from the storyline text file and give the user an idea of how the game works"""
-    f = open('storyline.txt', 'r')
+    f = open('story/storyline.txt', 'r')
     storyline = f.read()
     f.close()
     print(storyline)
 read_storyline()
 
-def start_game():
-    """Temporary function for starting the game to test it is called correctly"""
-    print('start game function called')
 def ask_to_begin():
     """Asks the user if they would like to begin the game"""
     print('Would you like to begin? \n 1 = Yes, 2 = No')
     begin = input()
     if begin == '1':
-        start_game()
+        pass
     elif begin == '2':
         print('Okay, maybe next time! Goodbye')
         exit()
@@ -46,3 +45,4 @@ def ask_to_begin():
         print('Invalid entry')
         ask_to_begin()
 ask_to_begin()
+print('game has started')
