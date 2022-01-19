@@ -79,6 +79,5 @@ end_dict = {
 	"status": (status),
 	"sus_level": (sus)
 }
-print (status)
 
 print (end_dict)
