@@ -1,20 +1,3 @@
-import gspread
-from google.oauth2.service_account import Credentials
-import time
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('detective_game')
-global sus
-sus = 0
-
 def get_username():
     """ Asks the user for their name and stores it as a variable {name} """
     print("What is your name?")
@@ -24,18 +7,12 @@ def get_username():
         print('Please enter only alphabetical characters')
         get_username()
     return NAME
-print("Hello " + get_username() +"!")
-
-time.sleep(1)
 def read_storyline():
     """ A function to read from the storyline text file and give the user an idea of how the game works"""
-    with open('story/storyline.txt') as f:
+    with open('game/story/storyline.txt') as f:
         storyline = f.read()
         f.close()
         print(storyline)
-read_storyline()
-
-time.sleep(8)
 
 def ask_to_begin():
     """Asks the user if they would like to begin the game"""
@@ -49,24 +26,20 @@ def ask_to_begin():
     else: 
         print('Invalid entry please select option 1 or 2')
         ask_to_begin()
-ask_to_begin()
-
 def read_story_1():
     """A function to read the first part of the story"""
-    with open('story/story_1.txt') as f:
+    with open('game/story/story_1.txt') as f:
         story_1 = f.read()
         f.close()
         print(story_1)
-read_story_1()
-time.sleep(3)
+
 def read_question_1():
     """A function to read the first part of the story"""
-    with open('questions/questions.txt') as f:
+    with open('game/questions/questions.txt') as f:
         question_1 = f.readlines()
         f.close()
         print('Detective : '+ (question_1[0].format(NAME)))
-read_question_1()
-time.sleep(3)
+
 def ans_question_1():
     """asks the user to answer the first question raises suspiscion level if certain answers are chosen"""
     global sus
@@ -91,26 +64,20 @@ def ans_question_1():
         print('invalid entry, please select option 1 or 2')
         ans_question_1()
 
-ans_question_1()
-
-print('sus = ' + str(sus)) # will be removed for final deployment, user should not see their suspiscion levels until the end
-
 def read_story_2():
     """A function to read the second part of the story"""
-    with open('story/story_2.txt') as f:
+    with open('game/story/story_2.txt') as f:
         story_2 = f.read()
         f.close()
         print(story_2.format(NAME))
-read_story_2()
-time.sleep(5)
+
 def read_question_2():
     """A function to read the second question"""
-    with open('questions/questions.txt') as f:
+    with open('game/questions/questions.txt') as f:
         question_2 = f.readlines()
         f.close()
         print('Detective : '+ (question_2[1].format(NAME)))
-read_question_2()
-time.sleep(3)
+
 def ans_question_2():
     """asks the user to answer the second question raises suspiscion level if certain answers are chosen"""
     global sus
@@ -124,26 +91,20 @@ def ans_question_2():
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_2()
-
-ans_question_2()
-print('sus = ' + str(sus)) #remove for deployment
-
 def read_story_3():
     """A function to read the third part of the story"""
-    with open('story/story_3.txt') as f:
+    with open('game/story/story_3.txt') as f:
         story_3 = f.read()
         f.close()
         print(story_3.format(NAME))
-read_story_3()
-time.sleep(5)
+
 def read_question_3():
     """A function to read the third question"""
-    with open('questions/questions.txt') as f:
+    with open('game/questions/questions.txt') as f:
         question_3 = f.readlines()
         f.close()
         print('Detective : '+ (question_3[2].format(NAME)))
-read_question_3()
-time.sleep(3)
+
 def ans_question_3():
     """asks the user to answer the third question raises suspiscion level if certain answers are chosen"""
     global sus
@@ -158,26 +119,18 @@ def ans_question_3():
         print('invalid entry, please select option 1 or 2')
         ans_question_3()
 
-ans_question_3()
-print('sus = ' + str(sus))
-time.sleep(3)
 def read_story_4():
     """A function to read the fourth part of the story """
-    with open('story/story_4.txt') as f:
+    with open('game/story/story_4.txt') as f:
         story_4 = f.read()
         f.close()
         print(story_4.format(NAME))
-read_story_4()
-time.sleep(5)
 def read_question_4():
     """A function to read the fourth question"""
-    with open('questions/questions.txt') as f:
+    with open('game/questions/questions.txt') as f:
         question_4 = f.readlines()
         f.close()
         print('Detective : '+ (question_4[3].format(NAME)))
-read_question_4()
-time.sleep(3)
-
 def ans_question_4():
     """asks the user to answer the fourth question raises suspiscion level if certain answers are chosen"""
     global sus
@@ -192,24 +145,20 @@ def ans_question_4():
         print('invalid entry, please select option 1 or 2')
         ans_question_4()
 
-ans_question_4()
-
 def read_story_5():
     """A function to read the fifth part of the story"""
-    with open('story/story_5.txt') as f:
+    with open('game/story/story_5.txt') as f:
         story_5 = f.read()
         f.close()
         print(story_5.format(NAME))
-read_story_5()
-time.sleep(5)
+
 def read_question_5():
     """A function to read the fifth question"""
-    with open('questions/questions.txt') as f:
+    with open('game/questions/questions.txt') as f:
         question_5 = f.readlines()
         f.close()
         print('Detective : '+ (question_5[4].format(NAME)))
-read_question_5()
-time.sleep(3)
+
 def ans_question_5():
     """asks the user to answer the fifth question raises suspiscion level if certain answers are chosen"""
     global sus
@@ -224,4 +173,3 @@ def ans_question_5():
         print('invalid entry, please select option 1 or 2')
         ans_question_5()
 ans_question_5()
-print('sus = ' + str(sus))
