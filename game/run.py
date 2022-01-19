@@ -12,9 +12,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('detective_game')
-global sus
-sus = 0
-
+get_username()
 print("Hello " + get_username() +"!")
 time.sleep(1)
 read_storyline()
@@ -28,32 +26,25 @@ ans_question_1()
 print('sus = ' + str(sus)) # will be removed for final deployment, user should not see their suspiscion levels until the end
 read_story_2()
 time.sleep(5)
-
 read_question_2()
 time.sleep(3)
 ans_question_2()
 print('sus = ' + str(sus)) #remove for deployment
 read_story_3()
 time.sleep(5)
-
 read_question_3()
 time.sleep(3)
-
 ans_question_3()
 print('sus = ' + str(sus))
 time.sleep(3)
-
 read_story_4()
 time.sleep(5)
 read_question_4()
 time.sleep(3)
-
 ans_question_4()
-
-
 read_story_5()
 time.sleep(5)
-
 read_question_5()
 time.sleep(3)
+ans_question_5()
 print('sus = ' + str(sus))

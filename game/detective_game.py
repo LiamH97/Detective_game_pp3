@@ -1,3 +1,5 @@
+global sus
+sus = 0
 def get_username():
     """ Asks the user for their name and stores it as a variable {name} """
     print("What is your name?")
@@ -172,4 +174,3 @@ def ans_question_5():
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_5()
-ans_question_5()
