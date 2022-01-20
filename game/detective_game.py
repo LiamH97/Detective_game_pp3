@@ -1,4 +1,5 @@
 global sus
+global NAME
 sus = 0
 with open('game/questions/questions.txt') as f:
     lines = [line.rstrip() for line in f]

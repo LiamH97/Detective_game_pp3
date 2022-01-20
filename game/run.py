@@ -1,19 +1,8 @@
-import gspread
-from google.oauth2.service_account import Credentials
-import time
+from sheet import *
 from detective_game import *
+from login_test import *
 
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('detective_game')
-
+login()
 get_username()
 from detective_game import NAME
 print("Hello " + (NAME) +"!")
@@ -56,10 +45,6 @@ time.sleep(5)
 read_question_6()
 time.sleep(3)
 ans_question_6()
-print('sus = ' + str(sus))
-
-
-
 
 from detective_game import *
 
@@ -80,4 +65,4 @@ end_dict = {
 	"sus_level": (sus)
 }
 
-print (end_dict)
+print (end_dict[key])
