@@ -5,9 +5,8 @@ with open('game/questions/questions.txt') as f:
     lines = [line.rstrip() for line in f]
 def get_username():
     """ Asks the user for their name and stores it as a variable {name} """
-    print("What is your name?")
     global NAME
-    NAME = input()
+    NAME = input('What is your name? \n')
     if not NAME.isalpha():
         print('Please enter only alphabetical characters')
         get_username()
@@ -21,8 +20,7 @@ def read_storyline():
 
 def ask_to_begin():
     """Asks the user if they would like to begin the game"""
-    print('Would you like to begin? \n 1 = Yes, 2 = No')
-    begin = input()
+    begin = input('Would you like to begin? \n 1 = Yes, 2 = No \n')
     if begin == '1':
         pass
     elif begin == '2':
@@ -46,15 +44,13 @@ def ans_question_1():
     """asks the user to answer the first question raises suspiscion level if certain answers are chosen"""
     global sus
     sus = 0
-    print('Let the detective in to talk? \n 1 = Yes, 2 = No')
-    ans = input()
+    ans = input('Let the detective in to talk? \n 1 = Yes, 2 = No \n')
     if ans == '1':
         pass
     elif ans == '2':
         sus +=1
         print('Detective: "Well we have a warrant for questioning, so I sugguest you comply"')
-        print('Do you comply? \n 1 = Yes, 2 = No')
-        ans1 = input()
+        ans1 = input('Do you comply? \n 1 = Yes, 2 = No \n')
         if ans1 == '2':
             sus +=5
             print('You were arrested and brought in for further questioning')
@@ -80,8 +76,7 @@ def read_question_2():
 def ans_question_2():
     """asks the user to answer the second question raises suspiscion level if certain answers are chosen"""
     global sus
-    print('How do you answer the detective\'s question? \n 1 = Yes, I\'m aware, 2 = No, I haven\'t been following the news')
-    ans = input()
+    ans = input('How do you answer the detective\'s question? \n 1 = Yes, I\'m aware, 2 = No, I haven\'t been following the news \n')
     if ans == '1':
         pass
     elif ans == '2':
@@ -104,8 +99,7 @@ def read_question_3():
 def ans_question_3():
     """asks the user to answer the third question raises suspiscion level if certain answers are chosen"""
     global sus
-    print('How do you answer the detective\'s question? \n 1 = We were good friends, but I cut ties with Vinnie once he started going down the wrong path. \n 2 = Yeah, me and Vinnie are close.')
-    ans = input()
+    ans = input('How do you answer the detective\'s question? \n 1 = We were good friends, but I cut ties with Vinnie once he started going down the wrong path. \n 2 = Yeah, me and Vinnie are close. \n')
     if ans == '2':
         pass
     elif ans == '1':
@@ -127,8 +121,7 @@ def read_question_4():
 def ans_question_4():
     """asks the user to answer the fourth question raises suspiscion level if certain answers are chosen"""
     global sus
-    print('How do you answer the detective\'s question? \n 1 = Like you said - we were good friends. We just talked about old times . \n 2 = We discussed future business opportunities once Vinne was officially released from prison')
-    ans = input()
+    ans = input('How do you answer the detective\'s question? \n 1 = Like you said - we were good friends. We just talked about old times . \n 2 = We discussed future business opportunities once Vinne was officially released from prison \n')
     if ans == '2':
         pass
     elif ans == '1':
@@ -152,8 +145,7 @@ def read_question_5():
 def ans_question_5():
     """asks the user to answer the fifth question raises suspiscion level if certain answers are chosen"""
     global sus
-    print('How do you answer the detective\'s question? \n 1 = No, never. He always kept his crime life separate from our friendship. \n 2 = He had mentioned a hiding place to me but I refused to hear of it. I didn\'t want to be involved.')
-    ans = input()
+    ans = input('How do you answer the detective\'s question? \n 1 = No, never. He always kept his crime life separate from our friendship. \n 2 = He had mentioned a hiding place to me but I refused to hear of it. I didn\'t want to be involved. \n')
     if ans == '2':
         pass
     elif ans == '1':
@@ -175,8 +167,7 @@ def read_question_6():
 def ans_question_6():
     """asks the user to answer the fifth question raises suspiscion level if certain answers are chosen"""
     global sus
-    print('How do you answer the detective\'s question? \n 1 = He has a girlfriend that lives around this area. He could be with her. \n 2 = I wish I could help, but i really don\'t know')
-    ans = input()
+    ans = input('How do you answer the detective\'s question? \n 1 = He has a girlfriend that lives around this area. He could be with her. \n 2 = I wish I could help, but i really don\'t know \n')
     if ans == '2':
         pass
     elif ans == '1':

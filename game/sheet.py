@@ -21,3 +21,22 @@ def get_login():
     """Puts the values from the login_info sheet in to a nested list"""
     login_data = USER_LOGINS.get_all_records()
     return login_data
+
+
+def login():
+    """function to check user and password for verification. Comparing with google sheet data"""
+    user_id = input('Please enter your username \n')
+    user_pw = input('Please enter your password \n')
+    logins = get_login()
+    if not [i for i in logins if i['Username'] == user_id]:
+        print('\nUsername does not exist')
+        print('\nPlease try again.')
+        login()
+    else:
+        correct_uid = [i for i in logins if i['Username'] == user_id][0]
+    if user_pw == correct_uid['Password']:
+        print('\nLogin complete')
+    else:
+        print('\nPassword did not match for the username enetered.')
+        print('\nPlease try again.')
+        login()

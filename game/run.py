@@ -1,6 +1,5 @@
 from sheet import *
 from detective_game import *
-from login_test import *
 
 login()
 get_username()
