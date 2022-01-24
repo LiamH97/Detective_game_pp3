@@ -40,3 +40,8 @@ def login():
         print('\nPassword did not match for the username enetered.')
         print('\nPlease try again.')
         login()
+
+def update_sheet():
+    row = [(NAME),(status),(sus)]
+    index = 2
+    RESULTS.insert_row(row, index)

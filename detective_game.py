@@ -49,7 +49,7 @@ def ans_question_1():
         pass
     elif ans == '2':
         sus +=1
-        print('Detective: "Well we have a warrant for questioning, so I sugguest you comply"')
+        print('Detective: "Well we have a warrant for questioning, so I sugguest you comply"\n')
         ans1 = input('Do you comply? \n 1 = Yes, 2 = No \n')
         if ans1 == '2':
             sus +=5
@@ -81,7 +81,7 @@ def ans_question_2():
         pass
     elif ans == '2':
         sus +=1
-        print('Detective: "Well it\'s a fact he was last reported to be seen wandering this street by multiple witnesses and warning letters were posted to each house on this street.\"')
+        print('Detective: "Well it\'s a fact he was last reported to be seen wandering this street by multiple witnesses and warning letters were posted to each house on this street.\"\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_2()
@@ -104,7 +104,7 @@ def ans_question_3():
         pass
     elif ans == '1':
         sus +=1
-        print('Detective: "' + (NAME) + ' You\'ve been recorded on the visitor logs as a visitor of Vinnie\'s on multiple occasions"')
+        print('Detective: "' + (NAME) + ' You\'ve been recorded on the visitor logs as a visitor of Vinnie\'s on multiple occasions"\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_3()
@@ -126,7 +126,7 @@ def ans_question_4():
         pass
     elif ans == '1':
         sus +=1
-        print('Detective: "That\'s interesting considering the letter we intercepted from Vinnie addressed to you. He spoke about business opportunities you two had planned for when he \'gets out\'"')
+        print('Detective: "That\'s interesting considering the letter we intercepted from Vinnie addressed to you. He spoke about business opportunities you two had planned for when he \'gets out\'"\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_4()
@@ -150,7 +150,7 @@ def ans_question_5():
         pass
     elif ans == '1':
         sus +=1
-        print('Detective: "Come on, you know we intercepted the letter ' + (NAME) + ', he clearly mentioned wanting to follow up on your discussion about his hiding place')
+        print('Detective: "Come on, you know we intercepted the letter ' + (NAME) + ', he clearly mentioned wanting to follow up on your discussion about his hiding place\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_5()
@@ -172,7 +172,30 @@ def ans_question_6():
         pass
     elif ans == '1':
         sus +=1
-        print('Detective: "We looked into his girlfriend, her home address is registered as 5km from here. Vinnie was spotted on this street, not 5km away."')
+        print('Detective: "We looked into his girlfriend, her home address is registered as 5km from here. Vinnie was spotted on this street, not 5km away."\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_6()
+
+def read_story_7():
+    """A function to read the fifth part of the story"""
+    with open('game/story/story_7.txt') as f:
+        story_7 = f.read()
+        f.close()
+        print(story_7.format(NAME))
+def read_question_7():
+    """A function to read the fifth question"""
+    print('Detective : '+ (lines[6].format(NAME)))
+
+def ans_question_7():
+    """asks the user to answer the fifth question raises suspiscion level if certain answers are chosen"""
+    global sus
+    ans = input('How do you answer the detective\'s question? \n 1 = Yes. \n 2 = No, I felt some pressure to cover and may have told some white lies \n')
+    if ans == '1':
+        pass
+    elif ans == '2':
+        sus -=1
+        print('Detective: "I appreciate your honesty"\n')
+    else:
+        print('invalid entry, please select option 1 or 2')
+        ans_question_7()
