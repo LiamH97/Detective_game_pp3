@@ -24,7 +24,8 @@ def get_login():
 
 
 def login():
-    """function to check user and password for verification. Comparing with google sheet data"""
+    """function to check user and password for verification.
+     Comparing with google sheet data"""
     user_id = input('Please enter your username \n')
     user_pw = input('Please enter your password \n')
     logins = get_login()
@@ -40,8 +41,3 @@ def login():
         print('\nPassword did not match for the username enetered.')
         print('\nPlease try again.')
         login()
-
-def update_sheet():
-    row = [(NAME),(status),(sus)]
-    index = 2
-    RESULTS.insert_row(row, index)

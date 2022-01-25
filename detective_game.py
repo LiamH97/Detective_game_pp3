@@ -3,6 +3,8 @@ global NAME
 sus = 0
 with open('game/questions/questions.txt') as f:
     lines = [line.rstrip() for line in f]
+
+
 def get_username():
     """ Asks the user for their name and stores it as a variable {name} """
     global NAME
@@ -11,12 +13,16 @@ def get_username():
         print('Please enter only alphabetical characters')
         get_username()
     return NAME
+
+
 def read_storyline():
-    """ A function to read from the storyline text file and give the user an idea of how the game works"""
+    """ A function to read from the storyline text file
+     and give the user an idea of how the game works"""
     with open('game/story/storyline.txt') as f:
         storyline = f.read()
         f.close()
         print(storyline)
+
 
 def ask_to_begin():
     """Asks the user if they would like to begin the game"""
@@ -26,9 +32,11 @@ def ask_to_begin():
     elif begin == '2':
         print('Okay, maybe next time! Goodbye')
         exit()
-    else: 
+    else:
         print('Invalid entry please select option 1 or 2')
         ask_to_begin()
+
+
 def read_story_1():
     """A function to read the first part of the story"""
     with open('game/story/story_1.txt') as f:
@@ -36,31 +44,34 @@ def read_story_1():
         f.close()
         print(story_1)
 
+
 def read_question_1():
     """A function to read the first part of the story"""
-    print('Detective : '+ (lines[0].format(NAME)))
+    print('Detective : ' + (lines[0].format(NAME)))
+
 
 def ans_question_1():
-    """asks the user to answer the first question raises suspiscion level if certain answers are chosen"""
+    """asks the user to answer the first question 
+    raises suspiscion level if certain answers are chosen"""
     global sus
     sus = 0
     ans = input('Let the detective in to talk? \n 1 = Yes, 2 = No \n')
     if ans == '1':
         pass
     elif ans == '2':
-        sus +=1
+        sus += 1
         print('Detective: "Well we have a warrant for questioning, so I sugguest you comply"\n')
         ans1 = input('Do you comply? \n 1 = Yes, 2 = No \n')
         if ans1 == '2':
-            sus +=5
+            sus += 5
             print('You were arrested and brought in for further questioning')
-            #Add entry to sheet for arrested
             exit()
-        elif ans1 =='1':
+        elif ans1 == '1':
             pass
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_1()
+
 
 def read_story_2():
     """A function to read the second part of the story"""
@@ -69,9 +80,11 @@ def read_story_2():
         f.close()
         print(story_2.format(NAME))
 
+
 def read_question_2():
     """A function to read the second question"""
-    print('Detective : '+ (lines[1].format(NAME)))
+    print('Detective : ' + (lines[1].format(NAME)))
+
 
 def ans_question_2():
     """asks the user to answer the second question raises suspiscion level if certain answers are chosen"""
@@ -80,11 +93,13 @@ def ans_question_2():
     if ans == '1':
         pass
     elif ans == '2':
-        sus +=1
+        sus += 1
         print('Detective: "Well it\'s a fact he was last reported to be seen wandering this street by multiple witnesses and warning letters were posted to each house on this street.\"\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_2()
+
+
 def read_story_3():
     """A function to read the third part of the story"""
     with open('game/story/story_3.txt') as f:
@@ -92,9 +107,11 @@ def read_story_3():
         f.close()
         print(story_3.format(NAME))
 
+
 def read_question_3():
     """A function to read the third question"""
-    print('Detective : '+ (lines[2].format(NAME)))
+    print('Detective : ' + (lines[2].format(NAME)))
+
 
 def ans_question_3():
     """asks the user to answer the third question raises suspiscion level if certain answers are chosen"""
@@ -103,11 +120,12 @@ def ans_question_3():
     if ans == '2':
         pass
     elif ans == '1':
-        sus +=1
+        sus += 1
         print('Detective: "' + (NAME) + ' You\'ve been recorded on the visitor logs as a visitor of Vinnie\'s on multiple occasions"\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_3()
+
 
 def read_story_4():
     """A function to read the fourth part of the story """
@@ -115,9 +133,13 @@ def read_story_4():
         story_4 = f.read()
         f.close()
         print(story_4.format(NAME))
+
+
 def read_question_4():
     """A function to read the fourth question"""
-    print('Detective : '+ (lines[3].format(NAME)))
+    print('Detective : ' + (lines[3].format(NAME)))
+
+
 def ans_question_4():
     """asks the user to answer the fourth question raises suspiscion level if certain answers are chosen"""
     global sus
@@ -125,11 +147,12 @@ def ans_question_4():
     if ans == '2':
         pass
     elif ans == '1':
-        sus +=1
+        sus += 1
         print('Detective: "That\'s interesting considering the letter we intercepted from Vinnie addressed to you. He spoke about business opportunities you two had planned for when he \'gets out\'"\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_4()
+
 
 def read_story_5():
     """A function to read the fifth part of the story"""
@@ -138,9 +161,11 @@ def read_story_5():
         f.close()
         print(story_5.format(NAME))
 
+
 def read_question_5():
     """A function to read the fifth question"""
-    print('Detective : '+ (lines[4].format(NAME)))
+    print('Detective : ' + (lines[4].format(NAME)))
+
 
 def ans_question_5():
     """asks the user to answer the fifth question raises suspiscion level if certain answers are chosen"""
@@ -149,20 +174,25 @@ def ans_question_5():
     if ans == '2':
         pass
     elif ans == '1':
-        sus +=1
+        sus += 1
         print('Detective: "Come on, you know we intercepted the letter ' + (NAME) + ', he clearly mentioned wanting to follow up on your discussion about his hiding place\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_5()
+
+
 def read_story_6():
     """A function to read the fifth part of the story"""
     with open('game/story/story_6.txt') as f:
         story_6 = f.read()
         f.close()
         print(story_6.format(NAME))
+
+
 def read_question_6():
     """A function to read the fifth question"""
-    print('Detective : '+ (lines[5].format(NAME)))
+    print('Detective : ' + (lines[5].format(NAME)))
+
 
 def ans_question_6():
     """asks the user to answer the fifth question raises suspiscion level if certain answers are chosen"""
@@ -171,11 +201,12 @@ def ans_question_6():
     if ans == '2':
         pass
     elif ans == '1':
-        sus +=1
+        sus += 1
         print('Detective: "We looked into his girlfriend, her home address is registered as 5km from here. Vinnie was spotted on this street, not 5km away."\n')
     else:
         print('invalid entry, please select option 1 or 2')
         ans_question_6()
+
 
 def read_story_7():
     """A function to read the fifth part of the story"""
@@ -183,9 +214,12 @@ def read_story_7():
         story_7 = f.read()
         f.close()
         print(story_7.format(NAME))
+
+
 def read_question_7():
     """A function to read the fifth question"""
-    print('Detective : '+ (lines[6].format(NAME)))
+    print('Detective : ' + (lines[6].format(NAME)))
+
 
 def ans_question_7():
     """asks the user to answer the fifth question raises suspiscion level if certain answers are chosen"""
@@ -194,7 +228,7 @@ def ans_question_7():
     if ans == '1':
         pass
     elif ans == '2':
-        sus -=1
+        sus -= 1
         print('Detective: "I appreciate your honesty"\n')
     else:
         print('invalid entry, please select option 1 or 2')

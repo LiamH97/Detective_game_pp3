@@ -3,7 +3,7 @@ from sheet import *
 login()
 get_username()
 from detective_game import NAME
-print("Hello " + (NAME) +"!")
+print ("Hello " + (NAME) + "!")
 time.sleep(1)
 read_storyline()
 time.sleep(8)
@@ -13,19 +13,16 @@ time.sleep(3)
 read_question_1()
 time.sleep(3)
 ans_question_1()
-# print('sus = ' + str(sus)) # will be removed for final deployment, user should not see their suspiscion levels until the end
 read_story_2()
 time.sleep(5)
 read_question_2()
 time.sleep(3)
 ans_question_2()
-# print('sus = ' + str(sus)) #remove for deployment
 read_story_3()
 time.sleep(5)
 read_question_3()
 time.sleep(3)
 ans_question_3()
-# print('sus = ' + str(sus))
 time.sleep(3)
 read_story_4()
 time.sleep(5)
@@ -37,7 +34,6 @@ time.sleep(5)
 read_question_5()
 time.sleep(3)
 ans_question_5()
-# print('sus = ' + str(sus))
 read_story_6()
 time.sleep(5)
 read_question_6()
@@ -51,11 +47,15 @@ ans_question_7()
 
 
 status = 'unkown'
-"""Status is used to determine whether suspiscion was raised enough for you to be arrested or free, 
-the if statement below takes the sus level and assignes status the correct value based on your sus level"""
+"""Status is used to determine whether suspiscion was raised enough
+for you to be arrested or free,
+the if statement below takes the sus level
+ and assignes status the correct value based on your sus level"""
 
 
 from sheet import *
+
+
 def update_sheet():
     row = [(NAME), (status), (sus)]
     index = 2
@@ -71,10 +71,10 @@ if sus >= 3:
     elif begin == '2':
         print('Okay, maybe next time! Goodbye')
         exit()
-    else: 
+    else:
         print('Invalid entry please select option 1 or 2')
         ask_to_begin()
 else:
-    print('The detective left without his suspiscion being raised enough to bring you in. Congrats ' + (NAME)+ '!')
+    print('The detective left without his suspiscion being raised enough to bring you in. Congrats ' + (NAME) + '!')
     status = 'free'
     update_sheet()
